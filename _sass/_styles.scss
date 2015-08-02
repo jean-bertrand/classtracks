@@ -1,0 +1,124 @@
+/*===============GENERAL STYLES=========================*/
+/*buttons*/
+.button {
+	display:block;
+	padding: 10px;
+	border-radius: 2px;
+	&.red {
+		background: rgba($ct-red,.85);
+		&:hover {
+					background: $ct-turquoise;
+				}
+	}
+}
+
+
+/*===============PAGE SPECIFIC STYLES===================*/
+section.homepage {
+	position: relative;
+	z-index: 99;
+	margin-top:-175px;
+	.marquee {
+		padding: 275px 0px 100px;
+		background-image:url('/assets/imgs/marquees/homepage-marquee');
+		background-size: 100%;
+		@media screen and (max-width: 600px) {
+			padding: 75px 15px 0;
+		}
+		h1 {
+			color: $white;
+		}
+	}
+	.home-cta {
+		background-size: 100%;
+		background: rgba($ct-blue,.7);
+		min-height: 600px;
+		padding: $spacing-unit*2 0 $spacing-unit*4;
+		color: $white;
+		@media screen and (max-width: 600px) {
+			background-size: cover;
+		}
+		h1 {
+			font-size: 30px;
+		}
+		h2 {
+			color: $white;
+			text-align: center;
+		}
+		h4 {
+			color: $white;
+		}
+		a {
+			color: $white;
+			font-weight: bold;
+		}
+		//font awesome icon sizing
+		.fa {
+			font-size:25px;
+			margin-right:10px;
+			max-width:25px;
+			min-width: 25px;
+		}
+		.signup-form {
+			margin-top:-60px;
+			.summary {
+				padding: $spacing-unit+10 ($spacing-unit*2)+20 $spacing-unit*2 $spacing-unit;
+				.row {
+					margin-bottom:  $spacing-unit/2;
+				}
+				@media screen and (max-width: 600px) {
+					padding: $spacing-unit+10;
+				}
+			}
+			h4 {
+				display: inline;
+			}
+			h3 {
+				color: $white;
+				margin-bottom: $spacing-unit+10;
+			}
+			#mc_embed_signup {
+			padding: $spacing-unit+10;
+			box-sizing: border-box;
+			color: $dark-color;
+			@media screen and (max-width: 600px) {
+				padding: $spacing-unit/2;
+			}
+			#mc-embedded-subscribe-form {
+				padding-right: 60px;
+				border-right: 1px solid rgba(255,255,255,.25);
+				@media screen and (max-width: 600px) {
+					padding-right:0px;
+					border-right: none;
+				}
+			}
+			input {
+				background: rgba($white, .75);
+				border: none;
+				padding: 10px;
+				width: 100%;
+			}
+			input[type=submit] {
+				background: rgba($ct-turquoise, .85);
+				font-weight: bold;
+				margin: 15px 0 0;
+				color: $white;
+				&:hover {
+					background: $ct-blue-dark;
+				}
+			}
+			.mc-field-group {
+				display: inline-block;
+				margin: 15px auto;
+			}
+			label {
+				display: block;
+				font-weight: 200;
+				color: $white;
+			}
+		}
+		}
+		
+		
+	}
+}
