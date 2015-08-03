@@ -20,7 +20,12 @@ body {
     font-weight: 300;
     color: $text-color;
     -webkit-text-size-adjust: 100%;
-    -webkit-text-transform: antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+body p {
+	margin: 10px 0;
+	font-family:  $body-font;
+	font-weight: 400;
 }
 
 
@@ -80,14 +85,22 @@ li {
  * Headings
  */
 h1 {
-    font-weight: 900;
+    font-weight: 100;
     font-family: "Raleway", "Lato", "Helvetica Neue", sans-serif;
     text-transform: uppercase;
+    span.blue {
+	    color: $ct-blue;
+	}
+    span.turq {
+		color: $ct-turquoise;
+		font-weight: 900;
+		text-shadow: 0 0 60px #000
+	}
 }
 h2 {
-	font-family: Adelle;
-	font-size: 40px;
-	font-weight: 900;
+	font-family: "Adelle-Bold", "Lato", "Helvetica Neue", sans-serif;
+	font-size: 25px;
+	font-weight: 300;
 	color: $ct-blue;
 	margin:7.5px 0;
 	
@@ -113,19 +126,56 @@ h4 {
  * Links
  */
 a {
-    color: $ct-red;
+    color: $ct-turquoise;
     text-decoration: none;
-
     &:visited {
         color: darken($ct-turquoise, 15%);
     }
 
     &:hover {
-        color: $ct-turquoise !important;
+        color: darken($ct-turquoise, 15%);
         text-decoration: none !important;
     }
+    &.cta {
+		 background-color: $ct-turquoise;
+		 border-radius: 2px;
+		 color: #fff;
+		 &.inverse {
+			 background-color: #ffffff;
+			 color: $ct-turquoise;
+		 }
+		 &:hover {
+			 background-color: $ct-blue-dark;
+			 color: #fff;
+		 }
+	 }
 }
 
+/**
+ * Buttons
+ */
+ button {
+	 display: inline-block;
+	 padding: 10px 20px;
+	 margin: 0 10px;
+	 border: none;
+	 border-radius: 2px;
+	 font-size: 16px;
+	 font-family: 'Adelle-Regular', 'Lato', Helvetica Neue, serif !important;
+	 font-weight: 500 !important;
+	 &.cta {
+		 background-color: $ct-turquoise;
+		 a {color: #fff;}
+		 &.inverse {
+			 background-color: #ffffff;
+			 a {color: $ct-turquoise;}
+		 }
+		 &:hover {
+			 background-color: $ct-blue-dark;
+			 a {color: #fff;}
+		 }
+	 }
+ }
 
 
 /**
@@ -185,8 +235,8 @@ pre {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        //max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        //max-width:         calc(#{$content-width} - (#{$spacing-unit}));
     }
 }
 
@@ -222,3 +272,27 @@ pre {
         }
     }
 }
+
+/**
+ * Forms
+ */
+ 
+ input, textarea {
+	 padding: 10px;
+	 vertical-align: top;
+	 border: 1px solid rgba($ct-turquoise, .5);
+	 &.cta {
+		 background-color: $ct-turquoise;
+		 border-radius: 2px;
+		 color: #fff;
+		 &.inverse {
+			 background-color: #ffffff;
+			 color: $ct-turquoise;
+		 }
+		 &:hover {
+			 background-color: $ct-blue-dark;
+			 color: #fff;
+		 }
+	 }
+
+ }

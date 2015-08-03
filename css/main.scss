@@ -5,7 +5,15 @@
 
 //Fonts
 //@include font-face("Adelle", font-files("/assets/fonts/Adelle/adelle_regular-webfont.eot", "/assets/fonts/Adelle/adelle_regular-webfont.otf"));
- @font-face {
+@font-face {
+    font-family:"Adelle-Bold";
+    src: url('/assets/fonts/Adelle/adelle_bold-webfont.eot') format("embedded open type");
+    src: url('/assets/fonts/Adelle/adelle_bold-webfont.ttf') format("truetype");
+    src: url('/assets/fonts/Adelle/adelle_bold-webfont.woff') ;
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
     font-family:"Adelle-Regular";
     src: url('/assets/fonts/Adelle/adelle_regular-webfont.eot') format("embedded open type");
     src: url('/assets/fonts/Adelle/adelle_regular-webfont.ttf') format("truetype");
@@ -13,19 +21,27 @@
     font-weight:normal;
     font-style:normal;
 }
+@font-face {
+    font-family:"Adelle-Light";
+    src: url('/assets/fonts/Adelle/adelle_light-webfont.eot') format("embedded open type");
+    src: url('/assets/fonts/Adelle/adelle_light-webfont.ttf') format("truetype");
+    src: url('/assets/fonts/Adelle/adelle_light-webfont.woff') ;
+    font-weight:normal;
+    font-style:normal;
+}
 
 // variables
 $heading-font: 'Raleway', Helvetica Neue, sans-serif;
-$base-font: 'Adelle-Regular', Helvetica, serif;
+$base-font: 'Adelle-Regular', 'Lato' Helvetica, serif;
 $body-font: 'Lato', Helvetica Neue, sans-serif;
-$base-font-size:   16px;
+$base-font-size:   14px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.75;
 
 $spacing-unit:     30px;
 
 $white:		    #ffffff;
-$text-color:       #434A53;
+$text-color:       #656d78;
 $background-color: #fdfdfd;
 $ct-turquoise:     #48CFAD;
 $ct-turquoise-dark: #37BC9B;
@@ -44,7 +60,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
+$on-palm:          748px;
 $on-laptop:        1024px;
 
 

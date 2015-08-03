@@ -13,6 +13,10 @@
     // Positioning context for the mobile navigation icon
     position: relative;
     z-index: 100;
+    @include media-query($on-palm) {
+	    background: $dark-color;
+	    padding: 20px 0;
+    }
 }
 
 .site-title {
@@ -30,9 +34,12 @@
     }
     @include media-query($on-palm) {
 	    float: none;
-	    text-align: center;
+	    text-align: left;
 	    display: block;
 	    margin:0 auto;
+	    img {
+		    width: 50%;
+	    }
     }
 }
 
@@ -45,26 +52,30 @@
     }
 
     .page-link {
-	    font-family: $base-font;
+	   font-family: $base-font;
         color: $white;
         line-height: $base-line-height;
-        :hover {
-	        color: $ct-turquoise !important;
+        padding: 10px;
+        &:hover {
+	        background-color: $ct-blue;
 	        text-decoration: none !important;
         }
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
-            margin-left: 20px;
+            margin-left: 10px;
+            @include media-query($on-palm) {
+	            margin-left: 0px;
+            }
         }
     }
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 10px;
-        right: 20px;
-        background-color: $background-color;
+        top: 30px;
+        right: 0px;
         text-align: left;
+        width: 100%;
 
         .menu-icon {
             display: block;
@@ -80,29 +91,41 @@
                 height: 15px;
 
                 path {
-                    fill: $ct-blue;
+                    fill: $ct-turquoise;
                 }
+            }
+            &:hover {
+	            >svg {
+		            path {
+			            fill: $ct-blue;
+		            }
+	            }
             }
         }
 
         .trigger {
             clear: both;
             display: none;
-            a.page-link {
-	            :hover {
-		            color: $ct-turquoise;
-	            }
-            }
         }
 
         &:hover .trigger {
             display: block;
-            padding-bottom: 5px;
+		  padding-bottom: 0;
+		  background-color: #48CFAD;
+		  position: absolute;
+		  top: 66px;
+		  width: 100%;
         }
 
         .page-link {
             display: block;
-            padding: 5px 10px;
+		  padding: 10px 80px 10px 20px;
+		  text-align: left;
+		  border-top: 1px solid rgba(255,255,255, .5);
+		  &.cta.inverse {
+			  background-color: $ct-turquoise;
+			  color: $white;
+		  }
         }
     }
 }

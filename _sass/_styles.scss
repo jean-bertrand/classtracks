@@ -1,4 +1,16 @@
 /*===============GENERAL STYLES=========================*/
+/*page title*/
+section .hero-title {
+	background-size: cover !important;
+	background-position: center !important;
+	background-color: $dark-color;
+	margin-top:-175px;
+	padding: 200px 0 75px;
+	text-align: center;
+}
+.post-title {
+	color: $ct-turquoise;
+}
 /*buttons*/
 .button {
 	display:block;
@@ -7,59 +19,64 @@
 	&.red {
 		background: rgba($ct-red,.85);
 		&:hover {
-					background: $ct-turquoise;
-				}
+			background: $ct-turquoise;
+		}
 	}
 }
-
+/*fluid containers*/
+.container-fluid {
+	background-color: lighten($grey-color, 40%);
+}
 
 /*===============PAGE SPECIFIC STYLES===================*/
 section.homepage {
 	position: relative;
 	z-index: 99;
 	margin-top:-175px;
+	@include media-query($on-laptop) {
+		margin-top: -220px;
+	}
+	@media screen and (max-width: 600px) {
+		margin-top:0px;
+	}
+
 	.marquee {
 		padding: 275px 0 0;
-		background-image:url('/assets/imgs/marquees/homepage-marquee');
-		background-size: 100%;
+		background-image:url('/assets/imgs/marquees/teacher-with-student.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		@media screen and (max-width: 600px) {
-			padding: 75px 15px 0;
+			padding: 55px 15px 0;
 		}
 		.marquee-text {
-			padding-bottom: 115px;
+			padding-bottom: 90px;
+			button {
+				font-size: 16px;
+			}
 		}
 		h1 {
 			color: $white;
+		}
+		@include media-query($on-palm) {
+			.marquee-text {
+				padding-bottom: 50px;
+			}
+			button {
+				width: 100%;
+			}
 		}
 	}
 	.home-cta {
 		background: rgba($ct-blue,.7);
-		padding: $spacing-unit+10 0;
+		padding: $spacing-unit 0;
 		color: $white;
-		@media screen and (max-width: 600px) {
-			background-size: cover;
+		text-align: center;
+		.container {
+			padding: 0;
 		}
-		h1 {
-			font-size: 30px;
-		}
-		h2 {
-			color: $white;
-			text-align: center;
-		}
-		h4 {
-			color: $white;
-		}
-		a {
-			color: $white;
-			font-weight: bold;
-		}
-		//font awesome icon sizing
-		.fa {
-			font-size:25px;
-			margin-right:10px;
-			max-width:25px;
-			min-width: 25px;
-		}
+		p { font-size: 20px;}
+		button { font-size: 16px; margin: 0 0 0 25px;}
 		.signup-form {
 			margin-top:-60px;
 			.summary {
@@ -82,44 +99,136 @@ section.homepage {
 			padding: $spacing-unit+10;
 			box-sizing: border-box;
 			color: $dark-color;
-			@media screen and (max-width: 600px) {
-				padding: $spacing-unit/2;
-			}
-			#mc-embedded-subscribe-form {
-				padding-right: 60px;
-				border-right: 1px solid rgba(255,255,255,.25);
 				@media screen and (max-width: 600px) {
-					padding-right:0px;
-					border-right: none;
+					padding: $spacing-unit/2;
 				}
-			}
-			input {
-				background: rgba($white, .75);
-				border: none;
-				padding: 10px;
-				width: 100%;
-			}
-			input[type=submit] {
-				background: rgba($ct-turquoise, .85);
-				font-weight: bold;
-				margin: 15px 0 0;
-				color: $white;
-				&:hover {
+				#mc-embedded-subscribe-form {
+					padding-right: 60px;
+					border-right: 1px solid rgba(255,255,255,.25);
+					@media screen and (max-width: 600px) {
+						padding-right:0px;
+						border-right: none;
+					}
+				}
+				input {
+					background: rgba($white, .75);
+					border: none;
+					padding: 10px;
+					width: 100%;
+				}
+				input[type=submit] {
+					background: rgba($ct-turquoise, .85);
+					font-weight: bold;
+					margin: 15px 0 0;
+					color: $white;
+					&:hover {
 					background: $ct-blue-dark;
+					}
+				}
+				.mc-field-group {
+					display: inline-block;
+					margin: 15px auto;
+				}
+				label {
+					display: block;
+					font-weight: 200;
+					color: $white;
 				}
 			}
-			.mc-field-group {
-				display: inline-block;
-				margin: 15px auto;
+		}
+		@include media-query($on-palm) {
+			display: none;
+		}
+	}
+	#learn-more-summary {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background-color: $white;
+		p:first-of-type {
+			text-align: center;
+		}
+		p > i.fa  {
+			text-align: center;
+			color: $ct-yellow-dark;
+			font-size:50px;
+		}
+		h2 {
+			text-align: center;
+		}
+	}
+	#vision-mission {
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('/assets/imgs/marquees/vision-mission.jpg');
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: left;
+		padding: 30px 75px 30px;
+		.col-md-6 {
+			padding: 30px 30px 70px;
+			h2 {
+				text-align: center;
+				color: $ct-turquoise;
 			}
-			label {
-				display: block;
-				font-weight: 200;
+			p {
 				color: $white;
+				width: 90%;
+				display: block;
+				margin: 10px auto;
 			}
 		}
+		.col-centered {
+			text-align: center;
 		}
-		
-		
+		@include media-query($on-palm) {
+			background-size: cover;
+			padding:20px;
+			.col-md-6 {
+				padding: 10px 0px;
+			}
+		}
+	}
+}
+//About Page
+.about {
+	.hero-title {
+		margin-top: -175px;
+		padding: 200px 0 75px;
+		text-align: center;
+		background: url('/assets/imgs/marquees/about.jpg');
+		.post-title {
+			span.blue {
+				color: $ct-blue;
+			}
+			span.turq {
+				color: $ct-turquoise;
+			}
+		}
+		@include media-query($on-palm) {
+			margin-top: 0px;
+			padding: 75px 0;
+		}
+	}
+}
+
+//Contact Us Page
+.contact-us {
+	.form {
+		background: $white;
+		.col-md-6 {
+			padding: 0 5%;
+		}
+		h3 {
+			color: $ct-blue;
+			font-size: 18px;
+			padding: 15px 0;
+			margin-bottom: 30px;
+			border-bottom: 1px solid $grey-color-light;
+		}
+		input, textarea {
+			width:100%;
+			margin-bottom: 25px;
+			&.cta {
+				width: 50%;
+			}
+		}
 	}
 }
