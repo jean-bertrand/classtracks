@@ -19,21 +19,22 @@ section.homepage {
 	z-index: 99;
 	margin-top:-175px;
 	.marquee {
-		padding: 275px 0px 100px;
+		padding: 275px 0 0;
 		background-image:url('/assets/imgs/marquees/homepage-marquee');
 		background-size: 100%;
 		@media screen and (max-width: 600px) {
 			padding: 75px 15px 0;
+		}
+		.marquee-text {
+			padding-bottom: 115px;
 		}
 		h1 {
 			color: $white;
 		}
 	}
 	.home-cta {
-		background-size: 100%;
 		background: rgba($ct-blue,.7);
-		min-height: 600px;
-		padding: $spacing-unit*2 0 $spacing-unit*4;
+		padding: $spacing-unit+10 0;
 		color: $white;
 		@media screen and (max-width: 600px) {
 			background-size: cover;
