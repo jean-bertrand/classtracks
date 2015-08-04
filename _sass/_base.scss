@@ -107,7 +107,7 @@ h2 {
 }
 h3 {
 	font-family: "Adelle-Regular", "Lato", "Helvetica Neue", sans-serif; 
-	font-size: 30px; 
+	font-size: 18px; 
 	font-weight: 200;
 	color: #616973;
 	margin: 5px 0;
@@ -137,6 +137,7 @@ a {
         text-decoration: none !important;
     }
     &.cta {
+         padding:10px 20px;
 		 background-color: $ct-turquoise;
 		 border-radius: 2px;
 		 color: #fff;

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: This is the First written blog post
-date: {}
+date: 2015-03-08 12:47:40
 categories: "education, startups"
 published: true
 ---
