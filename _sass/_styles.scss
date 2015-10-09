@@ -1,4 +1,10 @@
 /*===============GENERAL STYLES=========================*/
+/*nav*/
+nav.site-nav {
+	a[href="/privacy-policy/"], a[href="/terms-of-use/"] {
+		display: none;
+	}
+}
 /*page title*/
 section .hero-title {
 	background-size: cover !important;
@@ -10,6 +16,12 @@ section .hero-title {
 }
 .post-title {
 	color: $ct-turquoise;
+}
+/*intro copy*/
+p.intro {
+	color: $white;
+	margin: 15px auto;
+	text-align: left;
 }
 /*buttons*/
 .button {
@@ -52,11 +64,13 @@ section.homepage {
 		.marquee-text {
 			padding-bottom: 90px;
 			button {
-				font-size: 16px;
+				font-size: 22px;
 			}
 		}
 		h1 {
 			color: $white;
+			font-weight: 900;
+			font-size: 2.5em;
 		}
 		@include media-query($on-palm) {
 			.marquee-text {
@@ -76,7 +90,7 @@ section.homepage {
 			padding: 0;
 		}
 		p { font-size: 20px;}
-		button { font-size: 16px; margin: 0 0 0 25px;}
+		button { font-size: 22px; margin: 0 0 0 25px;}
 		.signup-form {
 			margin-top:-60px;
 			.summary {
@@ -140,6 +154,17 @@ section.homepage {
 			display: none;
 		}
 	}
+	#video {
+		background-color: #434a54;
+		text-align: center;
+		padding: 1em;
+		video {
+			width: 100%;
+			height:auto;
+			max-width: 720px;
+			max-height: 358px;
+		}
+	}
 	#learn-more-summary {
 		padding-top: 30px;
 		padding-bottom: 30px;
@@ -155,33 +180,31 @@ section.homepage {
 		h2 {
 			text-align: center;
 		}
+		.row.row-centered {
+			text-align: center;
+			padding: 1em 0;
+		}
 	}
 	#vision-mission {
-		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('/assets/imgs/marquees/vision-mission.jpg');
+		background: $dark-color;
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 		background-position: left;
-		padding: 30px 75px 30px;
-		.col-md-6 {
-			padding: 30px 30px 70px;
-			h2 {
-				text-align: center;
-				color: $ct-turquoise;
-			}
+		padding: 3.5em 0;
+		.col-centered {
+			text-align: center;
 			p {
 				color: $white;
 				width: 90%;
 				display: block;
-				margin: 10px auto;
+				margin: 10px auto 20px;
+				text-align: left;
 			}
-		}
-		.col-centered {
-			text-align: center;
 		}
 		@include media-query($on-palm) {
 			background-size: cover;
 			padding:20px;
-			.col-md-6 {
+			.col-centered {
 				padding: 10px 0px;
 			}
 		}
@@ -193,7 +216,7 @@ section.homepage {
 		margin-top: -175px;
 		padding: 200px 0 75px;
 		text-align: center;
-		background: url('/assets/imgs/marquees/about.jpg');
+		background: $dark-color;
 		.post-title {
 			span.blue {
 				color: $ct-blue;
@@ -209,10 +232,10 @@ section.homepage {
 	}
     .post-intro {
         padding:50px 0;
+        text-align: left;
     }
-    .grey-bar {
+    .row {
         padding: 30px 0;
-        background-color: $grey-color-light;
         text-align: center;
         h2:after {
             content: '';
@@ -222,20 +245,151 @@ section.homepage {
             margin: 10px auto;
             background-color: $ct-turquoise;
         }
+        &.team-bios {
+	        background-color: rgba($grey-color-light, .5)
+        }
+        &.achievements {
+	        background-color: $grey-color-light;
+	        p {
+		        font-size:12px;
+		        margin-top: -15px;
+		        color: rgba($ct-blue, .65);
+	        }
+        }
     }
     .team {
         .col-md-4 {
             padding: 50px 30px;
-            h3 {
+         }
+         p {
+	         text-align: left;
+         }
+    }
+    .team.founders .col-md-4 h3 {
                 position: relative;
                 bottom: 75px;
                 text-align: center;
                 color: $white;
             }
-        }
-    }
+
 }
 
+//learn More Page
+body.learn-more {
+	padding-top:0px;
+	padding-bottom: 0px !important;
+	.hero-title {
+		margin-top: -175px;
+		padding: 200px 0 75px;
+		text-align: center;
+		background: linear-gradient(rgba($dark-color, .25), rgba($dark-color, .5)), url('/assets/imgs/marquees/student-on-laptop.jpg');
+		background-size: 100%;
+		background-position: center;
+		.post-title {
+			span.blue {
+				color: $ct-blue;
+			}
+			span.turq {
+				color: $ct-turquoise;
+			}
+		}
+	}
+	.post .container:first-child {
+		width: 100% !important;
+	}
+	.post-content {
+		margin-bottom: 0px;
+		h2 {
+			text-align: center;
+			&:after {
+				content: '';
+				display: block;
+				height: 1px;
+				width: 10%;
+				margin: 10px auto;
+				background-color: #48CFAD;
+			}
+		}
+	}
+	#tabs {
+		ul.ui-tabs-nav {
+			padding: 0;
+			margin: 0;
+			background-color: $grey-color-light;
+			text-align: center;
+			
+			li {
+				display: inline-block;
+				width: 16%;
+				text-align: center;
+				border-right: 1px solid rgba($white, .5);
+				a {
+					font-weight: 500;
+					color: $ct-turquoise;
+					display: block;
+					padding: 20px 0;
+				}
+				&:last-child {
+					border-right: none;
+				}
+				&.ui-state-active, &:hover {
+					border-bottom: 2px solid $ct-blue;
+					a {
+						color: $ct-blue;
+					}
+				}
+			}
+		}
+		.tab-content {
+			padding: 1.5em 0 3.5em;
+			ul {
+				padding: 0;
+			}
+		}
+	}
+	@include media-query($on-palm) {
+		.hero-title {
+			margin-top: 0px;
+			padding: 75px 0;
+			background-size: cover;
+		}
+		#tabs ul.ui-tabs-nav {
+			li {
+				width: 100% !important;
+			}
+		}
+	}
+}
+//Legal
+body.legal {
+	padding-top:0px;
+	.hero-title {
+		margin-top: -175px;
+		padding: 200px 0 75px;
+		text-align: center;
+		background: $dark-color;
+		background-size: 100%;
+		background-position: center;
+		.post-title {
+			span.blue {
+				color: $ct-blue;
+			}
+			span.turq {
+				color: $ct-turquoise;
+			}
+		}
+		@include media-query($on-palm) {
+			margin-top: 0px;
+			padding: 75px 0;
+		}
+		p.intro {
+			text-align: center;
+		}
+	}
+	.row {
+		padding: 1.5em 0;
+	}
+}
 //Contact Us Page
 .contact-us {
 	.form {
